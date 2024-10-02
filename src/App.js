@@ -19,7 +19,7 @@ function App() {
       path:"/sign-up",
       element:<Signup/>
     }
-  ])
+  ], {  basename: "/login_ui"})
   return (
     <div className="grid grid-cols-2 heigh gap-4">
       <div className="cols-span-1  pt-20 pl-24">
