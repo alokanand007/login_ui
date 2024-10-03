@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/login_ui/static/css/main.9807a3e3.css",
-    "main.js": "/login_ui/static/js/main.25ffc13e.js",
-    "static/js/453.9c5d69c4.chunk.js": "/login_ui/static/js/453.9c5d69c4.chunk.js",
+    "main.css": "/login_ui/static/css/main.d4c6f986.css",
+    "main.js": "/login_ui/static/js/main.77644b44.js",
+    "static/js/453.d5b19d22.chunk.js": "/login_ui/static/js/453.d5b19d22.chunk.js",
     "static/media/img.png": "/login_ui/static/media/img.f5e44254ef9666cc7a5b.png",
     "index.html": "/login_ui/index.html",
-    "main.9807a3e3.css.map": "/login_ui/static/css/main.9807a3e3.css.map",
-    "main.25ffc13e.js.map": "/login_ui/static/js/main.25ffc13e.js.map",
-    "453.9c5d69c4.chunk.js.map": "/login_ui/static/js/453.9c5d69c4.chunk.js.map"
+    "main.d4c6f986.css.map": "/login_ui/static/css/main.d4c6f986.css.map",
+    "main.77644b44.js.map": "/login_ui/static/js/main.77644b44.js.map",
+    "453.d5b19d22.chunk.js.map": "/login_ui/static/js/453.d5b19d22.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9807a3e3.css",
-    "static/js/main.25ffc13e.js"
+    "static/css/main.d4c6f986.css",
+    "static/js/main.77644b44.js"
   ]
 }
