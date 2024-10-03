@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup() {
   const intial = { firstname: "", lastname: "", email: "", password: "" };
@@ -14,9 +16,23 @@ function Signup() {
     console.log(formvalues);
   };
   const handlesubmit = (e) => {
+    const check = validate(formvalues)
     e.preventDefault();
-    setFormErrors(validate(formvalues));
+    setFormErrors(check);
     setIsSubmit(true);
+    console.log(Object.keys(check))
+    if (Object.keys(check).length === 0){
+      toast.success('Sign-up succesfully !', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
   };
   const validate = (values) => {
     const errors = {};
@@ -24,14 +40,22 @@ function Signup() {
     if (!values.firstname) {
       errors.firstname = "Firstname is required";
     }
-    if (!values.lastnamename) {
+    if (!values.lastname) {
       errors.lastname = "Lastname is required";
     }
     if (!values.email) {
       errors.email = "Email is required";
     }
+    else if (!regex.test(values.email)) {
+      errors.email = "Email not valid formate";
+    }
     if (!values.password) {
       errors.password = "Password is required";
+    }
+    else if (values.password.length < 4) {
+      errors.password = "password must be more then 4 characters";
+    } else if (values.password.length > 10) {
+      errors.password = "password cannot exceed more then 10 characters";
     }
 
     return errors;

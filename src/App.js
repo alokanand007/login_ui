@@ -6,6 +6,7 @@ import Login from "./components/or_login";
 import Right from "./components/rightpage";
 import Signup from "./components/signup";
 import Form from "./components/form";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const Router = createBrowserRouter([
@@ -32,8 +33,11 @@ function App() {
         
         
 
+        
         {/* or with link */}
         <Login />
+      <ToastContainer />
+
       </div>
 
       {/* right page */}

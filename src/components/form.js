@@ -3,6 +3,8 @@ import eye from "../assets/eye.png";
 import closeeye from "../assets/closeeye.png";
 import { useMemo, useState, useEffect } from "react";
 import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Form() {
   const intial = { email: "", password: "" };
@@ -14,33 +16,48 @@ function Form() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formvalues, [name]: value });
-    console.log(formvalues);
   };
 
   const handlesubmit = (e) => {
+    const check = validate(formvalues)
     e.preventDefault();
-    setFormErrors(validate(formvalues));
+    setFormErrors(check);
     setIsSubmit(true);
-  };
+    console.log(Object.keys(check))
+    if (Object.keys(check).length === 0){
+      toast.success('Login succesfully !', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
+
+   };
 
   const validate = (values) => {
     const errors = {};
     const regex = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
     if (!values.email) {
       errors.email = "Email is required";
+    } else if (!regex.test(values.email)) {
+      errors.email = "Email not valid formate";
     }
     if (!values.password) {
       errors.password = "Password is required";
+    } else if (values.password.length < 4) {
+      errors.password = "password must be more then 4 characters";
+    } else if (values.password.length > 10) {
+      errors.password = "password cannot exceed more then 10 characters";
     }
-
+    
     return errors;
   };
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formvalues);
-    }
-  }, [formErrors]);
+  
 
   const eyeF = () => {
     if (visible == "password") {
@@ -60,9 +77,12 @@ function Form() {
 
   return (
     <form>
+
+
+
       <div className="mt-14 border-2 clo pl-4 pt-1 pb-2 rounded-sm">
         <label>Email:</label>
-       
+
         <br />
         <input
           className="outline-"
@@ -72,31 +92,30 @@ function Form() {
           onChange={handleChange}
         />
         <br />
-      <p className="text-red-600">{formErrors.email}</p>
+        <p className="text-red-600">{formErrors.email}</p>
       </div>
       <div className="border-t-0 border-2  pl-4 pt-1 pb-2 clo rounded-sm">
         <label>password: </label>
-        
-         
-          <br />
-          <div className="password">
-            <input
-              className="outline- text-blue-600 "
-              type={visible}
-              id="password"
-              values={formvalues.password}
-              name="password"
-              onChange={handleChange}
-            />
-            <img
-              src={passeye}
-              onClick={eyeF}
-              className="pass-icon"
-              id="pass-icon"
-              alt="sd"
-            ></img>
-          </div>
-          <p className="text-red-600">{formErrors.password}</p>
+
+        <br />
+        <div className="password">
+          <input
+            className="outline- text-blue-600 "
+            type={visible}
+            id="password"
+            values={formvalues.password}
+            name="password"
+            onChange={handleChange}
+          />
+          <img
+            src={passeye}
+            onClick={eyeF}
+            className="pass-icon"
+            id="pass-icon"
+            alt="sd"
+          ></img>
+        </div>
+        <p className="text-red-600">{formErrors.password}</p>
       </div>
 
       <div className="flex mt-5 justify-between">
