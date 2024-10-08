@@ -6,6 +6,7 @@ import Layout from "./components/layout";
 import Contact from "./components/contact_us";
 import Home from "./components/home";
 
+
 function App() {
   const Router = createBrowserRouter(
     [
@@ -18,25 +19,28 @@ function App() {
             element: <Contact />,
           },
           {
-            path: "home",
+            path: "/",
             element: <Home />,
           },
           {
-            path: "/", 
+            path: "form",
             element: <Form />,
           },
           {
             path: "sign-up",
             element: <Signup />,
           },
-          
         ],
       },
     ],
     { basename: "/login_ui" }
   );
 
-  return <RouterProvider router={Router} />;
+  return (
+    <>
+      <RouterProvider router={Router} />;
+    </>
+  );
 }
 
 export default App;

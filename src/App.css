@@ -109,3 +109,10 @@ height: auto;
 .c{
   column-gap: 209px;
 }
+
+.fontt{
+ font-family:  "Poppins", sans-serif;
+ font-size: 3.75rem;
+ font-weight: 600;
+ line-height: 5.5rem;
+}
