@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import eye from "../assets/eye.png";
 import closeeye from "../assets/closeeye.png";
-import { useMemo, useState, useEffect } from "react";
-import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
+import { useMemo, useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -85,7 +84,7 @@ function Form() {
 
         <br />
         <input
-          className="outline-"
+          className="outline- w-full"
           type="text"
           name="email"
           values={formvalues.email}
@@ -98,9 +97,9 @@ function Form() {
         <label>password: </label>
 
         <br />
-        <div className="password">
+        <div className="password w-full">
           <input
-            className="outline- text-blue-600 "
+            className="outline- text-blue-600 w-full"
             type={visible}
             id="password"
             values={formvalues.password}

@@ -1,49 +1,42 @@
-// import logo from './logo.svg';
 import "./App.css";
-import { createBrowserRouter ,RouterProvider } from "react-router-dom";
-import Head from "./components/headsection";
-import Login from "./components/or_login";
-import Right from "./components/rightpage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signup from "./components/signup";
 import Form from "./components/form";
-import { ToastContainer } from "react-toastify";
+import Layout from "./components/layout";
+import Contact from "./components/contact_us";
+import Home from "./components/home";
 
 function App() {
-  const Router = createBrowserRouter([
-    
-     {
-      path:"/",
-      element:<Form/>
-     },
-
-     {
-      path:"/sign-up",
-      element:<Signup/>
-    }
-  ], {  basename: "/login_ui"})
-  return (
-    <div className="grid grid-cols-2 heigh gap-4">
-      <div className="cols-span-1  pt-20 pl-24">
-        {/* headsection */}
-        <Head />
-
-
-        
-        <RouterProvider router={Router}/>
-        
-        
-
-        
-        {/* or with link */}
-        <Login />
-      <ToastContainer />
-
-      </div>
-
-      {/* right page */}
-      <Right/>
-    </div>
+  const Router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <Layout />,
+        children: [
+          {
+            path: "contact_us",
+            element: <Contact />,
+          },
+          {
+            path: "home",
+            element: <Home />,
+          },
+          {
+            path: "/", 
+            element: <Form />,
+          },
+          {
+            path: "sign-up",
+            element: <Signup />,
+          },
+          
+        ],
+      },
+    ],
+    { basename: "/login_ui" }
   );
+
+  return <RouterProvider router={Router} />;
 }
 
 export default App;

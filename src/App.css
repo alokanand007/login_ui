@@ -66,9 +66,9 @@
 height: auto;
 
 }
-.www{
+/* .www{
   width:86%;
-}
+} */
 .outline-{
   outline: none;
  color: rgb(54, 108, 225);
@@ -106,3 +106,6 @@ height: auto;
     top: 4px;
 }
 
+.c{
+  column-gap: 209px;
+}

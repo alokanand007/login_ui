@@ -1,11 +1,11 @@
-function Login(){
+function Socialmedialink(){
     return(
         <div className=" grrd text-sm font-roboto  mt-20">
-          <a href="www.google.com" className="clo">
-            Or login with
-          </a>
           <a className="text-blue-900" href="http://www.facebook.com">
           facebook
+          </a>
+          <a className="text-blue-900" href="http://www.instagram.com">
+          Instagram
           </a>
           <a className="text-blue-900" href="http://www.Linkedin.com">
             LinkedIn
@@ -16,4 +16,4 @@ function Login(){
         </div>
     )
 }
-export default Login;
+export default Socialmedialink;

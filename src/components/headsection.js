@@ -1,7 +1,8 @@
 
 function Head(){
     return (
-        <><h1 className="text-blue-600 text-3xl font-bold	">Digital</h1><h1 className="text-blue-600 text-3xl font-bold pt-10">
+        <><h1 className="text-blue-600 text-3xl font-bold	">Digital</h1>
+        <h1 className="text-blue-600 text-3xl font-bold pt-10">
             Artificial Intelligence
             <br />
             Driving Result for The Traval
