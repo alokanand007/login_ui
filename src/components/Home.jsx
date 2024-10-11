@@ -3,7 +3,7 @@ import React from "react";
 // import instagram from "../assets/instagram.png";
 // import LinkedIn from "../assets/linkedin.png";
 import dp from "../assets/dp.png";
-import Myskills from "./myskills";
+import Myskills from "./MySkills";
 
 function Home() {
   return (
@@ -30,7 +30,7 @@ function Home() {
             </pre>
             <div className="">
               <button
-                className="bg-sky-600 justify-center items-center w-48 h-16 rounded-xl border-2 mt-16 flex text-sm font-roboto w-20 h-9  active:bg-violet-400 focus:outline-none "
+                className="bg-sky-600 justify-center items-center w-2/6 h-12 rounded-xl border-2 mt-16 flex text-sm font-roboto   active:bg-violet-400 focus:outline-none "
                 type="button"
               >
                 <p className="font-semibold text-2xl text-white ">Contact</p>

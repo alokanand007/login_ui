@@ -1,10 +1,10 @@
 import React, { useMemo  } from "react";
-import Head from "./headsection";
-import Socialmedialink from "./sociallinks";
-import Right from "./rightpage";
+import Head from "./HeadSection";
+import Socialmedialink from "./SocialLinls";
+import Right from "./RightPage";
 import { ToastContainer } from "react-toastify";
 import {   Outlet, useLocation } from "react-router-dom";
-import Navsection from "./navsection";
+import Navsection from "./NavSection";
 
 
 const Layout = () => {

@@ -1,10 +1,10 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Signup from "./components/signup";
-import Form from "./components/form";
-import Layout from "./components/layout";
-import Contact from "./components/contact_us";
-import Home from "./components/home";
+import Signup from "./components/SignUp";
+import Form from "./components/Form";
+import Layout from "./components/Layout";
+import Contact from "./components/ContactUs";
+import Home from "./components/Home";
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         element: <Layout />,
         children: [
           {
-            path: "contact_us",
+            path: "ContactUs",
             element: <Contact />,
           },
           {
@@ -23,11 +23,11 @@ function App() {
             element: <Home />,
           },
           {
-            path: "form",
+            path: "Form",
             element: <Form />,
           },
           {
-            path: "sign-up",
+            path: "SignUp",
             element: <Signup />,
           },
         ],
