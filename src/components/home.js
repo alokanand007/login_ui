@@ -2,9 +2,8 @@ import React from "react";
 // import github from "../assets/github.png";
 // import instagram from "../assets/instagram.png";
 // import LinkedIn from "../assets/linkedin.png";
-import dp from "../assets/dp.png"
+import dp from "../assets/dp.png";
 import Myskills from "./myskills";
-
 
 function Home() {
   return (
@@ -14,10 +13,18 @@ function Home() {
       <div className="grid grid-cols-2 gap-12 mt-32 mx-12 ">
         <div className="flex justify-center">
           <div className="col-span-1 pt-20">
-            <pre className="fontt ">
+            <pre className="fontt">
               Hi,
               <br />
-              I'am <span className="text-sky-600">Alok</span>
+              <span
+                className="relative w-[max-content]
+                before:absolute before:inset-0 before:animate-typewriter
+                before:bg-white
+                after:absolute after:inset-0 after:w-[0.110em] after:animate-caret
+                after:bg-black"
+              >
+                I'am <span className="text-sky-600">Alok</span> .
+              </span>
               <br />
               Web Developer
             </pre>
@@ -55,8 +62,7 @@ function Home() {
 
       {/* tools */}
       <div className="mt-32">
-
-      <Myskills/>
+        <Myskills />
       </div>
       {/* end */}
     </div>
