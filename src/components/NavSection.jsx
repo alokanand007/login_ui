@@ -1,40 +1,58 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Navsection() {
-  const [scroll, setscroll] = useState("");
+  const [scroll, setScroll] = useState("");
+  const location = useLocation();
 
-  const onscroll = () => {
+  const onScroll = () => {
     if (window.scrollY < 15) {
-      setscroll("");
+      setScroll("");
     } else {
-      setscroll("shadow-lg");
+      setScroll("shadow-lg");
+    }
+  };
+  const handleScrollToSkills = () => {
+    const skillsSection = document.getElementById("skills-section");
+    if (skillsSection) {
+      skillsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const handleScrollToAbout = () => {
+    const skillsSection = document.getElementById("about-section");
+    if (skillsSection) {
+      skillsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", onscroll);
-    return () => window.removeEventListener("scroll", onscroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const isContactPage = location.pathname === "/ContactUs";
+
   return (
     <div
-      className={`${scroll} w-full bg-white fixed top-0 flex flex-row-reverse`}
+      className={`${scroll} w-full ${
+        isContactPage && !scroll ? "bg-transparent" : "bg-white"
+      } z-10 fixed top-0 flex flex-row-reverse transition-colors duration-300`}
     >
-      <div className=" w-1/2 abt bg-white flex justify-between pb-4  pt-12 px-14">
+      <div className="w-1/2 abt flex justify-between pb-4 pt-9 px-14">
         <Link to="/" className="clo text-2xl font-semibold relative ">
           Home
         </Link>
-        <a href="www" className="clo text-2xl font-semibold relative ">
-          About us
-        </a>
-        <a href="www" className="clo text-2xl font-semibold relative ">
+        <Link to="" className="clo text-2xl font-semibold relative " onClick={handleScrollToAbout}>
+          About me
+        </Link>
+        <Link to="" className="clo text-2xl font-semibold relative " onClick={handleScrollToSkills}>
           Skills
-        </a>
-        <a href="www" className="clo text-2xl font-semibold relative ">
+        </Link>
+        <Link to="AboutMe" className="clo text-2xl font-semibold relative ">
           Works
-        </a>
-        <Link to="/contact_us" className="clo text-2xl font-semibold relative">
+        </Link>
+        <Link to="/ContactUs" className="clo text-2xl font-semibold relative">
           Contact
         </Link>
       </div>

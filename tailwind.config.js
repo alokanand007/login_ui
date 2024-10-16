@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        typewriter: 'typewriter 2s steps(11) infinite alternate',
-        caret: 'typewriter 2s steps(11) infinite alternate, blink 1s steps(11) ',
+        typewriter: 'typewriter 1.5s steps(6) infinite alternate',
+        caret: 'typewriter 1.5s steps(6) infinite alternate, blink 1s steps(6) ',
       },
       keyframes: {
         typewriter: {

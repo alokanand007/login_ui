@@ -64,8 +64,40 @@
 }
 .heigh{
 height: auto;
-
 }
+
+/* my skills hover effect  */
+.skill-heading {
+  position: relative;
+}
+
+.skill-heading:hover::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%; /* Full width on hover */
+  height: 4px;
+  background-color: #3751FE;
+  transition: all 0.5s;
+}
+
+.skill-heading::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #3751FE;
+  transition: all 0.5s;
+}
+.skill-heading:hover{
+  color:#3751FE ;
+ }
+
+
+
 /* .www{
   width:86%;
 } */
@@ -90,6 +122,7 @@ height: auto;
 .abt a:hover::before{
   width: 100%;
 }
+
 .password{
   display: inline-block;
   position: relative;

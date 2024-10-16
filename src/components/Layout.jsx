@@ -9,9 +9,10 @@ import Navsection from "./NavSection";
 
 const Layout = () => {
   const location = useLocation();
+  console.log(location.pathname)
 
   const showLeftPage = useMemo(() => {
-    const arr = ["/contact_us", "/home","/"];
+    const arr = ["/ContactUs", "/home","/"];
     return !arr.includes(location.pathname);
   }, [location.pathname]);
 

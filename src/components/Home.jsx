@@ -4,26 +4,27 @@ import React from "react";
 // import LinkedIn from "../assets/linkedin.png";
 import dp from "../assets/dp.png";
 import Myskills from "./MySkills";
+import AboutMe from "./AboutMe";
 
 function Home() {
   return (
     <div className="">
       {/* navbar */}
 
-      <div className="grid grid-cols-2 gap-12 mt-32 mx-12 ">
+      <div className="grid grid-cols-2 gap-12 mt-28 mx-12 ">
         <div className="flex justify-center">
           <div className="col-span-1 pt-20">
             <pre className="fontt">
               Hi,
               <br />
               <span
-                className="relative w-[max-content]
+               
+              >
+                I'am <span className="text-sky-600 relative w-[max-content]
                 before:absolute before:inset-0 before:animate-typewriter
                 before:bg-white
                 after:absolute after:inset-0 after:w-[0.110em] after:animate-caret
-                after:bg-black"
-              >
-                I'am <span className="text-sky-600">Alok</span> .
+                after:bg-black">Alok  </span> 
               </span>
               <br />
               Web Developer
@@ -63,6 +64,9 @@ function Home() {
       {/* tools */}
       <div className="mt-32">
         <Myskills />
+      </div>
+      <div className="mt-32">
+        <AboutMe />
       </div>
       {/* end */}
     </div>

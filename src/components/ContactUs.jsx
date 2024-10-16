@@ -11,13 +11,6 @@ function Contact() {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden"; // Disable scrolling
-
-    return () => {
-      document.body.style.overflow = "auto"; // Reset overflow on unmount
-    };
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
